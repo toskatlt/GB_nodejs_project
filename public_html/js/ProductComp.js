@@ -37,7 +37,7 @@ Vue.component('product', {
 				<p class="item-price pink">{{ product.price }}$</p>
 			</div>
 		</a>
-		<div class="add_cart"><a href="#" class="add" @click="$parent.$parent.$refs.cart.addProduct(product)">Add to Cart</a></div>
+		<div class="add_cart"><div class="add" @click="$parent.$parent.$refs.cart.addProduct(product)">Add to Cart</div></div>
 	</div>
 	`
 })

@@ -25,6 +25,14 @@ Vue.component('cart', {
 			}
 		}
 	},
+	computed: {
+		total () {
+			return this.cartItems.reduce((accum, item) => accum += item.price * item.quantity, 0);
+		},
+		count () {
+			return this.cartItems.reduce((accum, item) => accum += item.quantity, 0);
+		}
+	},
 	mounted() {
 		this.$parent.getApp(`${API}/api/cart/`)
 			.then(data => {
@@ -46,12 +54,12 @@ Vue.component('cart', {
 			</cart-item> 
 
 			<div class="cart__total">
-				<p>TOTAL</p>
-				<p></p>
+				<div>TOTAL:</div><div>{{ total }}$</div>
 			</div>
 			<a href="checkout.html" class="cart__button">Checkout</a>
 			<a href="cart.html" class="cart__button">Go to cart</a>
 		</div>
+		<div class="cart-count">{{ count }}</div>
 	</div>`
 });
 
