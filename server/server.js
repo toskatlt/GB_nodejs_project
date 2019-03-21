@@ -56,7 +56,6 @@ app.get('/api/cart/', (req, res) => {
 
 app.get('/api/cart/:id', (req, res) => {
 	let sql = `SELECT quantity FROM cart WHERE id = ${req.params.id}`;
-	res.send(sql);
 	let query = db.query(sql, (err,result) => {
 		if (err) {
 			return res.sendStatus(404, JSON.springify({result: 0, text: err}))
@@ -80,7 +79,8 @@ app.get('/api/cartCount', (req, res) => {
 // POST
 
 app.post('/api/cart/:id', (req, res) => {
-	let sql = `INSERT INTO cart('id', 'quantity') VALUES (${req.params.id}, 1)`;
+	let sql = `INSERT INTO cart (id, quantity) VALUES (${req.params.id}, 1)`;
+	console.log(sql);
 	let query = db.query(sql, (err,result) => {
 		if (err) {
 			return res.send(err);
@@ -92,7 +92,7 @@ app.post('/api/cart/:id', (req, res) => {
 
 // UPGRADE
 
-app.put('/api/cartUpd/:id', (req, res) => {
+app.put('/api/cart/:id', (req, res) => {
 	let sql = `UPDATE cart SET quantity = ${req.query.quantity} WHERE id= ${req.params.id}`;
 	let query = db.query(sql, (err,result) => {
 		if (err) {
@@ -105,8 +105,8 @@ app.put('/api/cartUpd/:id', (req, res) => {
 
 // DELETE
 
-app.delete('/api/cartDel/:id', (req, res) => {
-	let sql = `DELETE FROM cart WHERE id= ${req.params.id}`;
+app.delete('/api/cart/:id', (req, res) => {
+	let sql = `DELETE FROM cart WHERE id = ${req.params.id}`;
 	let query = db.query(sql, (err,result) => {
 		if (err) {
 			return res.send(err);
