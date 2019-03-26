@@ -58,7 +58,7 @@
 				<p class="headline-big-text">Fetured Items</p>
 				<p class="headline-small-text">Shop for items based on what we featured in this week</p>
 			</div>
-			<products ref="products"></products>
+			<products ref="products" :from="0" :to="8"></products>
 			<div class="footline">
 				<a href="#" class="button2">Browse All Product ➞</a>
 			</div>

@@ -22,7 +22,8 @@ const app = express();
 // SELECT
 
 app.get('/api/products/', (req, res) => {
-	let sql = `SELECT * FROM products`;
+	let sql = `SELECT * FROM products LIMIT ${req.query.from} , ${req.query.to}`;
+	console.log(sql);
 	let query = db.query(sql, (err, result) => {
 		if (err) {
 			return res.sendStatus(404, JSON.springify({result: 0, text: err}))

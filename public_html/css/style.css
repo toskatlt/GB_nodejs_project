@@ -1068,15 +1068,10 @@ to_cart-category-border:before {
 .also_items {
   margin-top: 119px;
 }
-.also-product {
-  margin-top: 72px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .also {
   display: flex;
   justify-content: center;
+  margin-bottom: 72px;
 }
 .img_cart {
   margin-right: 15px;

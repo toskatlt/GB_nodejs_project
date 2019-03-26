@@ -64,66 +64,7 @@
 			<div class="also">
 				<p class="also-big-text">YOU MAY LIKE ALSO</p>
 			</div>
-			<div class="also-product container">
-				<div class="item">
-					<a class="product-link" href="#">
-						<img class="item-img" src="img/product/img_9.jpg" alt="BLAZE LEGGINGS">
-						<div class="item-text-block">
-							<p class="item-name">BLAZE LEGGINGS</p>
-							<div class="item-footer">
-								<p class="item-price pink">$52.00</p>
-								<p class="stars">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="far fa-star"></i>
-								</p>
-							</div>
-						</div>
-					</a>
-					<div class="add_cart"><a href="#" class="add">Add to Cart</a></div>
-				</div>
-				<div class="item">
-					<a class="product-link" href="#">
-						<img class="item-img" src="img/product/img_10.jpg" alt="ALEXA SWEATER">
-						<div class="item-text-block">
-							<p class="item-name">ALEXA SWEATER</p>
-							<p class="item-price pink">$52.00</p>
-						</div>
-					</a>
-					<div class="add_cart"><a href="#" class="add">Add to Cart</a></div>
-				</div>
-				<div class="item">
-					<a class="product-link" href="#">
-						<img class="item-img" src="img/product/img_11.jpg" alt="AGNES TOP">
-						<div class="item-text-block">
-							<p class="item-name">AGNES TOP</p>
-							<div class="item-footer">
-								<p class="item-price pink">$52.00</p>
-								<p class="stars">
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="fas fa-star"></i>
-									<i class="far fa-star"></i>
-								</p>
-							</div>
-						</div>
-					</a>
-					<div class="add_cart"><a href="#" class="add">Add to Cart</a></div>
-				</div>
-				<div class="item">
-					<a class="product-link" href="#">
-						<img class="item-img" src="img/product/img_12.jpg" alt="SYLVA SWEATER">
-						<div class="item-text-block">
-							<p class="item-name">SYLVA SWEATER</p>
-							<p class="item-price pink">$52.00</p>
-						</div>
-					</a>
-					<div class="add_cart"><a href="#" class="add">Add to Cart</a></div>
-				</div>	
-			</div>
+			<products ref="products" :from="8" :to="4"></products>	
 		</div>	
 	</div>
 	

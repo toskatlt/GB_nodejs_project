@@ -1,4 +1,5 @@
 Vue.component('products', {
+	props: ['from', 'to'],
 	data () {
 		return {
 			products: [],
@@ -12,7 +13,7 @@ Vue.component('products', {
 		}
 	},	
 	mounted() {
-		this.$parent.getApp(`${API}/api/products/`)
+		this.$parent.getApp(`${API}/api/products/?from=` + this.from + `&to=` + this.to)
 			.then(data => {
 				for(let el of data) {
 					this.products.push(el);
@@ -21,11 +22,12 @@ Vue.component('products', {
 		});
 	},
 	template: `
-	<div class="product container">
+	<div class="product">
 		<product class="item" v-for="item of filtered" :key="item.id" :product="item"></product>
 	</div>
 	`
 });
+
 Vue.component('product', {
 	props: ['product'],
 	template: `
