@@ -54,7 +54,7 @@ Vue.component('cart', {
 			</cart-item> 
 
 			<div class="cart__total">
-				<div>TOTAL:</div><div>{{ total }}$</div>
+				<div>TOTAL</div><div>{{ total }}$</div>
 			</div>
 			<a href="checkout.html" class="cart__button">Checkout</a>
 			<a href="cart.html" class="cart__button">Go to cart</a>

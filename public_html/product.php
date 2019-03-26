@@ -1,8 +1,8 @@
 <?php 
 
-/* HEADER */ include ("modules/header.html");
-/* MENU */ include ("modules/menu.html");
-/* BREADCREMBS */ include ("modules/breadcrumbs.html"); 
+/* HEADER */ include ("modules/header.php");
+/* MENU */ include ("modules/menu.php");
+/* BREADCREMBS */ include ("modules/breadcrumbs.php"); 
 
 ?>
 	<div class="product">
@@ -317,6 +317,6 @@
 
 <?php 
 
-/* FOOTER */ include ("modules/footer.html"); 
+/* FOOTER */ include ("modules/footer.php"); 
 
 ?>

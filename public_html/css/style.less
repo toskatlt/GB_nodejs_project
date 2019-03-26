@@ -140,6 +140,10 @@ button, input, select {
 	cursor: pointer;
 }
 
+.find:hover .fa-search {
+	color: #f16d7f;
+}
+
 .down {
 	color: #838383;
 	font-size: 10px;
@@ -1145,13 +1149,51 @@ to_cart-category-border:before{
 }
 
 .my-account {
-	padding: 12px 7px 12px 19px;
-	color: #ffffff;
-	font-size: 15px;
-	line-height: 42px;
-	font-weight: 400;
-	letter-spacing: 0.38px;
-	text-decoration: none;
+	padding: 5px 7px 5px 19px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.35px;
+    position: relative;
+    cursor: pointer;
+    background-color: #f16d7f;
+}
+
+.sign_drop {
+	flex-wrap: wrap;
+    position: absolute;
+    right: -22px;
+    top: 42px;
+    display: none;
+    z-index: 1;
+    background: #fff;
+    padding: 12px 17px 20px 17px;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
+    cursor: auto;
+}
+
+.sign_drop:before {
+	content: '';
+	display: block;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	position: absolute;
+	top: -7px;
+	right: 35px;
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	border-top: 1px solid #eaeaea;
+	border-left: 1px solid #eaeaea;
+}
+.my-account:hover .sign_drop {
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
 }
 
 .filter {
@@ -1662,8 +1704,8 @@ to_cart-category-border:before{
 
 .drop__cart {
 	position: absolute;
-	left: 0px;
-	top: 48px;
+	left: -10px;
+    top: 49px;
 	display: block;
 	z-index: 15;
 	background: #fff;
@@ -1798,7 +1840,7 @@ to_cart-category-border:before{
     background-color: #f16d7f;
     border-radius: 25px;
     width: 19px;
-    text-align: left;
+   	text-align: -webkit-center;
     color: white;
     padding: 2px;
 } 

@@ -54,7 +54,5 @@ const app = new Vue({
 				this.$refs.error.setError(error);
 			})
 		},
-
-
 	},
 });

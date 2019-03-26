@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>BRAND SHOP</title>
 	<link rel="stylesheet" href="./css/style.css?ver=<?=$randval?>'">
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
@@ -51,7 +51,12 @@
 				</div>
 				<div class="header-right">
 					<cart ref="cart"></cart>
-					<a href="#" class="button"><span class="my-account">My Account<i class="fas fa-caret-down"></i></span></a>
+					<div class="my-account">My Account<i class="fas fa-caret-down"></i>
+						<div class="sign_drop">
+							<a href="checkout.php" class="cart__button">Register Now</a>
+							<a href="checkout.php" class="cart__button">Sign in</a>	
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
