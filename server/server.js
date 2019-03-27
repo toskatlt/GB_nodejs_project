@@ -10,12 +10,23 @@ const db = mysql.createConnection({
 
 });
 
-db.connect((err) => {
-	if (err) { 
-		throw err;
-	}
-	console.log('MySQL Connected...');
-});
+
+openConnection = () => { 
+	db.connect((err) => {
+		if (err) { 
+			if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+				openConnection();
+				console.log('MySQL ReConnected...');
+			} else {
+				throw err;
+			}
+		} else {
+			console.log('MySQL Connected...');
+			db.query(`SET SESSION wait_timeout = 604800`);
+		}
+	});
+}
+
 
 const app = express();
 
@@ -23,7 +34,6 @@ const app = express();
 
 app.get('/api/products/', (req, res) => {
 	let sql = `SELECT * FROM products LIMIT ${req.query.from} , ${req.query.to}`;
-	console.log(sql);
 	let query = db.query(sql, (err, result) => {
 		if (err) {
 			return res.sendStatus(404, JSON.springify({result: 0, text: err}))
