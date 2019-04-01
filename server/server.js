@@ -20,11 +20,11 @@ app.get('/api/products/', (req, res) => {
 			throw err;
 		} else {
 			let sql = `SELECT * FROM products LIMIT ${req.query.from} , ${req.query.to}`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -39,11 +39,11 @@ app.get('/api/products/:id', (req, res) => {
 			throw err;
 		} else {
 			let sql = `SELECT * FROM products WHERE id = ${req.params.id}`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -57,11 +57,11 @@ app.get('/api/cart/', (req, res) => {
 			throw err;
 		} else {
 			let sql = `SELECT products.*, cart.quantity FROM cart, products WHERE cart.id = products.id`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -75,11 +75,11 @@ app.get('/api/cart/:id', (req, res) => {
 			throw err;
 		} else {
 			let sql = `SELECT quantity FROM cart WHERE id = ${req.params.id}`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -93,11 +93,11 @@ app.get('/api/cartCount', (req, res) => {
 			throw err;
 		} else {
 			let sql = `SELECT count(*) as count FROM cart`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -113,11 +113,11 @@ app.post('/api/cart/:id', (req, res) => {
 			throw err;
 		} else {
 			let sql = `INSERT INTO cart (id, quantity) VALUES (${req.params.id}, 1)`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -133,11 +133,11 @@ app.put('/api/cart/:id', (req, res) => {
 			throw err;
 		} else {
 			let sql = `UPDATE cart SET quantity = ${req.query.quantity} WHERE id= ${req.params.id}`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
@@ -153,11 +153,11 @@ app.delete('/api/cart/:id', (req, res) => {
 			throw err;
 		} else {
 			let sql = `DELETE FROM cart WHERE id = ${req.params.id}`;
-			let query = connection.query(sql, (err, res) => {
+			let query = connection.query(sql, (err, result) => {
 				if (err) {
 					return res.sendStatus(404, JSON.springify({result: 0, text: err}))
 				} else {
-					return res.send(data);
+					return res.send(result);
 				}
 				connection.release();
 			})
